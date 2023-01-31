@@ -152,6 +152,7 @@ case $mainOption in
 			echo "2) Eclipse"
 			echo "3) JDK"
 			echo "4) Python"
+			echo "5) MySQL"
 			echo "========================"
 
 			read -p "Selecciona una de las opciones: " nestedOption
@@ -227,6 +228,23 @@ case $mainOption in
 					sleep 4 
 					;;
 
+				#MySQL
+
+				5) 	echo "Ahora empezará la descarga de MySQL"
+					
+					sudo apt install mysql-server
+					sleep 2
+					echo -e "Instalación completada"
+
+					sleep 4 
+
+					echo -e "Comprobando la versión de MySQL"
+					sleep 2
+					mysql --version
+					
+					sleep 4 
+					;;
+
 				# RESTO DE OPCIONES
 
 				*) clear
@@ -289,6 +307,74 @@ case $mainOption in
 				   ;;
 
 		# Cierre Nested While (File Sharing)
+			esac
+		done
+		;;
+
+	6) while [ $nestedOption -ne 1 ]; do
+
+			clear
+		
+			echo "----- Compression -----"
+			echo "========================"
+			echo "1) 7-Zip"
+			echo "2) PeaZip"
+			echo "========================"
+
+			read -p "Selecciona una de las opciones: " nestedOption
+
+			case $nestedOption in
+
+				# 7-Zip
+
+				1) 	echo "Ahora empezará la descarga de 7-Zip"
+					
+					sudo apt update
+					sudo apt install p7zip-full -y
+					
+					sleep 2
+
+					echo -e "Se ha completado la instalación de 7-Zip"
+
+					echo -e "Comprobando la versión de 7-Zip"
+
+					 --version
+					
+					sleep 2 
+					;;
+
+				# PeaZip
+
+				2) 	echo "Ahora empezará la descarga de PeaZip"
+					
+					sudo apt update
+					wget ttps://github.com/peazip/PeaZip/releases/download/8.6.0/peazip_8.6.0.LINUX.GTK2-1_amd64.deb
+					sudo apt install ./peazip_8.6.0.LINUX.GTK2-1_amd64.deb
+					sleep 2
+
+					echo -e "Se ha completado la instalación de PeaZip"
+
+					echo -e "Comprobando la versión de PeaZip"
+
+					peazip --version
+					
+					sleep 2 
+					;;
+
+				# RESTO DE OPCIONES
+
+				*) clear
+
+				   echo " $nestedOption no es una opción valida"
+
+				   sleep 2
+
+				   echo "Volviendo al menú anterior"
+
+				   sleep 2
+				   ;;
+
+		# Cierre Nested While (Compression)
 			esac
 		done
 		;;
