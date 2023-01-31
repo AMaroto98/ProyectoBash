@@ -1,4 +1,4 @@
-2) while [ $nestedOption -ne 4 ]; do
+3) while [ $nestedOption -ne 4 ]; do
 
 			clear
 		
@@ -79,7 +79,7 @@
 					sleep 4 
 					;;
 
-# RESTO DE OPCIONES
+				# RESTO DE OPCIONES
 
 				*) clear
                     echo " $nestedOption no es una opción valida"
