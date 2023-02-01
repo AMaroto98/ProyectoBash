@@ -417,6 +417,66 @@ case $mainOption in
 		done
 		;;
 
+	5) while [ $nestedOption -ne 1 ]; do
+
+			clear
+		
+			echo "----- Messaging -----"
+			echo "========================"
+			echo "1) Slack"
+			echo "2) Telegram"
+			echo "========================"
+
+			read -p "Selecciona una de las opciones: " nestedOption
+
+			case $nestedOption in
+
+				# Slack
+
+				1) 	echo "Ahora empezará la descarga de Slack"
+					
+					sudo snap install slack
+					
+					sleep 2
+
+					echo -e "Se ha completado la instalación de Slack"
+
+					echo -e "Comprobando la versión de Slack"
+
+					slack --version
+					
+					sleep 2 
+					;;
+
+				# Telegram
+
+				2) 	echo "Ahora empezará la descarga de Telegram"
+					
+					sudo snap install telegram-desktop
+
+					sleep 2
+
+					echo -e "Se ha completado la instalación de Telegram"
+					;;
+
+				# RESTO DE OPCIONES
+
+				*) clear
+
+				   echo " $nestedOption no es una opción valida"
+
+				   sleep 2
+
+				   echo "Volviendo al menú anterior"
+
+				   sleep 2
+				   ;;
+
+		# Cierre Nested While (Messaging)
+			esac
+		done
+		;;
+
 	6) while [ $nestedOption -ne 2 ]; do
 
 			clear
@@ -482,6 +542,55 @@ case $mainOption in
 
 		# Cierre Nested While (Compression)
 			esac
+		done
+		;;
+
+	7) 	while [ $nestedOption -ne 1 ]; do
+
+			clear
+
+			echo "----- Documents -----"
+			echo "========================"
+			echo "1) LibreOffice"
+			echo "========================"
+
+			read -p "Selecciona una de las opciones: " nestedOption
+
+			case $nestedOption in
+
+			    # LibreOffice
+
+		        1) 	echo "Ahora empezará la descarga de LibreOffice"
+
+		            sudo add-apt-repository ppa:libreoffice/ppa  
+
+		            sudo apt update     
+		            sudo apt install libreoffice -y
+
+		            sleep 2
+		            echo -e "Instalación completada"
+		            
+		            sleep 4 
+
+		            echo -e "Comprobando la versión de LibreOffice"
+		            sleep 2
+		            libreoffice --version
+		            ;;
+
+	        #	 RESTO DE OPCIONES
+
+		        *) clear
+		            echo " $nestedOption no es una opción valida"
+
+		            sleep 2
+
+		            echo "Volviendo al menú anterior"
+
+		            sleep 4
+		            ;;
+
+		# Cierre Nested While (Documents)
+	    	esac
 		done
 		;;
 
