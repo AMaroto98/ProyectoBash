@@ -2,16 +2,17 @@
 #18/01/2023
 #Menu para el proyecto
 
+# Clear para limpiar terminal
 clear
+
+# Variables para los bucles
 mainOption=0
 nestedOption=0
 
-# Colors
-RED='\033[1;31m' # El 1 hace la letra Bold
-WHITE='\033[1;37m' 
+# Validación números
+validacion=^[0-9]+$
 
-
-while [ $mainOption -ne 9 ]; do
+while true; do
 
 	clear
 
@@ -25,14 +26,20 @@ while [ $mainOption -ne 9 ]; do
 	echo "6) Compression"
 	echo "7) Documents"
 	echo "8) Other"
+	echo "9) Exit"
 	echo "========================"
 
-read -p "Selecciona una de las opciones: " mainOption
+  	read -p "Selecciona una opción: " mainOption
 
+	if ! [[ $mainOption =~ $validacion ]]; then
+		echo "Por favor, introduce un número."
+		sleep 2
+		continue
+	fi
 
 case $mainOption in
 
-	1) 	while [ $nestedOption -ne 4 ]; do
+	1) 	while true; do
 
 			clear
 		
@@ -42,14 +49,20 @@ case $mainOption in
 			echo "2) Mozilla Firefox"
 			echo "3) Chromium"
 			echo "4) Brave"
+			echo "5) Exit"
 			echo "========================"
 
-			read -p "Selecciona una de las opciones: " nestedOption
+			read -p "Selecciona una opción: " nestedOption
+
+			if ! [[ $nestedOption =~ $validacion ]]; then
+				echo "Por favor, introduce un número."
+				sleep 2
+				continue
+			fi
 
 			case $nestedOption in
 
-				# GOOGLE CHROME
-
+				# Chrome
 				1) 	echo "Ahora empezará la descarga de Google Chrome"
 					echo "Se descargará wget en caso de no tenerlo"
 
@@ -72,11 +85,10 @@ case $mainOption in
 					sleep 4 
 					;;
 
-				# MOZILLA FIREFOX
-
+				# Firefox
 				2) 	echo "Ahora empezará la descarga de Mozilla Firefox"
 					
-					sudo snap install firefox -y
+					sudo snap install firefox
 
 					sleep 2
 					echo -e "Instalación completada"
@@ -91,10 +103,9 @@ case $mainOption in
 					;;
 
 				# Chromium
-
 				3) 	echo "Ahora empezará la descarga de Chromium"
 					
-					sudo snap install Chromium -y 
+					sudo snap install chromium
 					sleep 2
 					echo -e "Instalación completada"
 
@@ -102,16 +113,15 @@ case $mainOption in
 
 					echo -e "Comprobando la versión de Chromium"
 					sleep 2
-					Chromium --version
+					chromium --version
 					
 					sleep 4 
 					;;
 
-				# BRAVE
-
+				# Brave
 				4) 	echo "Ahora empezará la descarga de Brave"
 					
-					sudo snap install brave -y 
+					sudo snap install brave
 					sleep 2
 					echo -e "Instalación completada"
 
@@ -124,15 +134,15 @@ case $mainOption in
 					sleep 4 
 					;;
 
-				# RESTO DE OPCIONES
+				# Exit
+				5) echo "Volviendo al menú principal"
+					
+					sleep 2
+					break
+					;;
 
-				*) clear
-
-				   echo " $nestedOption no es una opción valida"
-
-				   sleep 2
-
-				   echo "Volviendo al menú anterior"
+				# Resto de opciones
+				*) echo "Por favor, introduce un número valido."
 
 				   sleep 2
 				   ;;
@@ -142,7 +152,7 @@ case $mainOption in
 		done
 		;;
 
-	2) 	while [ $nestedOption -ne 4 ]; do
+	2) 	while true; do
 
 		    clear
 
@@ -152,28 +162,23 @@ case $mainOption in
 		    echo "2) VLC"
 		    echo "3) Audacity"
 		    echo "4) KdenLive"
+		    echo "5) Exit"
 		    echo "========================"
 
-		    read -p "Selecciona una de las opciones: " nestedOption
+		    read -p "Selecciona una opción: " nestedOption
+
+			if ! [[ $nestedOption =~ $validacion ]]; then
+				echo "Por favor, introduce un número."
+				sleep 2
+				continue
+			fi
 
 	    	case $nestedOption in
 
-	        	# SPOTIFY
-
+	        	# Spotify
 		        1) 	echo "Ahora empezará la descarga de Spotify"
 
-		            # Agrega la clave de reserva para que el sistema sepa que vamos a descargar algo seguro
-		            sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-
-		            # Al agregar esta dirección de repositorio, 
-		            # Los usuarios pueden instalar Spotify utilizando el gestor de paquetes de su sistema operativo.
-		            echo deb http://repository.spotify.com stable non-free 
-
-		            # Actualiza las fuentes de software
-		            sudo apt-get update
-
-		            # Instala la aplicación
-		            sudo apt-get install spotify-client -y
+		            sudo snap install spotify
 		            sleep 2
 		            echo -e "Instalación completada"
 		            
@@ -181,7 +186,6 @@ case $mainOption in
 		            ;;
 
 	        	# VLC
-
 		        2) 	echo "Ahora empezará la descarga de VLC"
 
 		            sudo snap install vlc
@@ -197,8 +201,7 @@ case $mainOption in
 		            sleep 4 
 		            ;;
 
-		        # AUDACITY
-
+		        # Audacity
 		        3) 	echo "Ahora empezará la descarga de Audacity"
 		            
 		            sudo apt install audacity -y
@@ -215,10 +218,9 @@ case $mainOption in
 		            ;;
 
 		        # KDENLIVE
-
 		        4) 	echo "Ahora empezará la descarga de KdenLive"
 		            
-		            sudo snap install kdenlive -y
+		            sudo snap install kdenlive
 		            sleep 2
 		            echo -e "Instalación completada"
 
@@ -231,24 +233,25 @@ case $mainOption in
 		            sleep 4 
 		            ;;
 
-		        # RESTO DE OPCIONES
+		        # Exit
+				5) echo "Volviendo al menú principal"
+					
+					sleep 2
+					break
+					;;
 
-		        *) clear
-		            echo " $nestedOption no es una opción valida"
+		        # Resto de opciones
+		        *) echo "Por favor, introduce un número valido."
 
-		            sleep 2
-
-		            echo "Volviendo al menú anterior"
-
-		            sleep 4
-		            ;;
+				   sleep 2
+				   ;;
 
 	    # Cierre Nested While (Mulimedia)
         	esac
     	done
     	;;
 
-	3)	while [ $nestedOption -ne 5 ]; do
+	3)	while true; do
 
 			clear
 		
@@ -259,14 +262,20 @@ case $mainOption in
 			echo "3) JDK"
 			echo "4) Python"
 			echo "5) MySQL"
+			echo "6) Exit"
 			echo "========================"
 
-			read -p "Selecciona una de las opciones: " nestedOption
+			read -p "Selecciona una opción: " nestedOption
+
+			if ! [[ $nestedOption =~ $validacion ]]; then
+				echo "Por favor, introduce un número."
+				sleep 2
+				continue
+			fi
 
 			case $nestedOption in
 
 				# VS Code
-
 				1) 	echo "Ahora empezará la descarga de VS Code"
 					
 					sudo snap install --classic code 
@@ -282,11 +291,9 @@ case $mainOption in
 					sleep 4 
 					;;
 
-				# ECLIPSE
-
+				# Eclipse
 				2) 	echo "Ahora empezará la descarga de Eclipse"
 					
-					sudo apt install default-jre
                     sudo snap install --classic eclipse 
 					sleep 2
 					echo -e "Instalación completada"
@@ -301,10 +308,9 @@ case $mainOption in
 					;;
 
                 # JDK
-
 				3) 	echo "Ahora empezará la descarga de JDK"
 					
-					sudo apt install default-jdk
+					sudo apt install default-jdk -y 
 					sleep 2
 					echo -e "Instalación completada"
 
@@ -318,7 +324,6 @@ case $mainOption in
 					;;
 
 				# Python
-
 				4) 	echo "Ahora empezará la descarga de Python"
 					
 					sudo apt install python3
@@ -335,10 +340,9 @@ case $mainOption in
 					;;
 
 				#MySQL
-
 				5) 	echo "Ahora empezará la descarga de MySQL"
 					
-					sudo apt install mysql-server
+					sudo apt install mysql-server -y
 					sleep 2
 					echo -e "Instalación completada"
 
@@ -351,38 +355,45 @@ case $mainOption in
 					sleep 4 
 					;;
 
-				# RESTO DE OPCIONES
+				# Exit
+				6) echo "Volviendo al menú principal"
+					
+					sleep 2
+					break
+					;;
 
-				*) clear
-                    echo " $nestedOption no es una opción valida"
+				# Resto de opciones
+				*) echo "Por favor, introduce un número valido."
 
-                    sleep 2
-
-                    echo "Volviendo al menú anterior"
-
-                    sleep 4
-                    ;;
+				   sleep 2
+				   ;;
 
 		# Cierre Nested While (Developer Tools)
 			esac
 		done
 		;;
 
-	4) while [ $nestedOption -ne 1 ]; do
+	4) while true; do
 
 			clear
 		
 			echo "----- File Sharing -----"
 			echo "========================"
 			echo "1) qBittorrent"
+			echo "2) Exit"
 			echo "========================"
 
-			read -p "Selecciona una de las opciones: " nestedOption
+			read -p "Selecciona una opción: " nestedOption
+
+			if ! [[ $nestedOption =~ $validacion ]]; then
+				echo "Por favor, introduce un número."
+				sleep 2
+				continue
+			fi
 
 			case $nestedOption in
 
 				# qBittorrent
-
 				1) 	echo "Ahora empezará la descarga de qBittorrent"
 					
 					sudo apt update
@@ -399,15 +410,15 @@ case $mainOption in
 					sleep 2 
 					;;
 
-				# RESTO DE OPCIONES
+				# Exit
+				2) echo "Volviendo al menú principal"
+					
+					sleep 2
+					break
+					;;
 
-				*) clear
-
-				   echo " $nestedOption no es una opción valida"
-
-				   sleep 2
-
-				   echo "Volviendo al menú anterior"
+				# Resto de opciones
+				*) echo "Por favor, introduce un número valido."
 
 				   sleep 2
 				   ;;
@@ -417,7 +428,7 @@ case $mainOption in
 		done
 		;;
 
-	5) while [ $nestedOption -ne 1 ]; do
+	5) while true; do
 
 			clear
 		
@@ -425,14 +436,20 @@ case $mainOption in
 			echo "========================"
 			echo "1) Slack"
 			echo "2) Telegram"
+			echo "3) Exit"
 			echo "========================"
 
-			read -p "Selecciona una de las opciones: " nestedOption
+			read -p "Selecciona una opción: " nestedOption
+
+			if ! [[ $nestedOption =~ $validacion ]]; then
+				echo "Por favor, introduce un número."
+				sleep 2
+				continue
+			fi
 
 			case $nestedOption in
 
 				# Slack
-
 				1) 	echo "Ahora empezará la descarga de Slack"
 					
 					sudo snap install slack
@@ -449,7 +466,6 @@ case $mainOption in
 					;;
 
 				# Telegram
-
 				2) 	echo "Ahora empezará la descarga de Telegram"
 					
 					sudo snap install telegram-desktop
@@ -459,15 +475,15 @@ case $mainOption in
 					echo -e "Se ha completado la instalación de Telegram"
 					;;
 
-				# RESTO DE OPCIONES
+				# Exit
+				3) echo "Volviendo al menú principal"
+					
+					sleep 2
+					break
+					;;
 
-				*) clear
-
-				   echo " $nestedOption no es una opción valida"
-
-				   sleep 2
-
-				   echo "Volviendo al menú anterior"
+				# Resto de opciones
+				*) echo "Por favor, introduce un número valido."
 
 				   sleep 2
 				   ;;
@@ -477,22 +493,27 @@ case $mainOption in
 		done
 		;;
 
-	6) while [ $nestedOption -ne 2 ]; do
+	6) while true; do
 
 			clear
 		
 			echo "----- Compression -----"
 			echo "========================"
 			echo "1) 7-Zip"
-			echo "2) PeaZip"
+			echo "2) Exit"
 			echo "========================"
 
-			read -p "Selecciona una de las opciones: " nestedOption
+			read -p "Selecciona una opción: " nestedOption
+
+			if ! [[ $nestedOption =~ $validacion ]]; then
+				echo "Por favor, introduce un número."
+				sleep 2
+				continue
+			fi
 
 			case $nestedOption in
 
 				# 7-Zip
-
 				1) 	echo "Ahora empezará la descarga de 7-Zip"
 					
 					sudo apt update
@@ -509,33 +530,15 @@ case $mainOption in
 					sleep 2 
 					;;
 
-				# PeaZip
-
-				2) 	echo "Ahora empezará la descarga de PeaZip"
+				# Exit
+				2) echo "Volviendo al menú principal"
 					
-					sudo apt update
-					wget ttps://github.com/peazip/PeaZip/releases/download/8.6.0/peazip_8.6.0.LINUX.GTK2-1_amd64.deb
-					sudo apt install ./peazip_8.6.0.LINUX.GTK2-1_amd64.deb
 					sleep 2
-
-					echo -e "Se ha completado la instalación de PeaZip"
-
-					echo -e "Comprobando la versión de PeaZip"
-
-					peazip --version
-					
-					sleep 2 
+					break
 					;;
 
-				# RESTO DE OPCIONES
-
-				*) clear
-
-				   echo " $nestedOption no es una opción valida"
-
-				   sleep 2
-
-				   echo "Volviendo al menú anterior"
+				# Resto de opciones
+				*) echo "Por favor, introduce un número valido."
 
 				   sleep 2
 				   ;;
@@ -545,21 +548,27 @@ case $mainOption in
 		done
 		;;
 
-	7) 	while [ $nestedOption -ne 1 ]; do
+	7) 	while true; do
 
 			clear
 
 			echo "----- Documents -----"
 			echo "========================"
 			echo "1) LibreOffice"
+			echo "2) Exit"
 			echo "========================"
 
-			read -p "Selecciona una de las opciones: " nestedOption
+			read -p "Selecciona una opción: " nestedOption
+
+			if ! [[ $nestedOption =~ $validacion ]]; then
+				echo "Por favor, introduce un número."
+				sleep 2
+				continue
+			fi
 
 			case $nestedOption in
 
 			    # LibreOffice
-
 		        1) 	echo "Ahora empezará la descarga de LibreOffice"
 
 		            sudo add-apt-repository ppa:libreoffice/ppa  
@@ -577,24 +586,25 @@ case $mainOption in
 		            libreoffice --version
 		            ;;
 
-	        #	 RESTO DE OPCIONES
+		        # Exit
+				2) echo "Volviendo al menú principal"
+					
+					sleep 2
+					break
+					;;
 
-		        *) clear
-		            echo " $nestedOption no es una opción valida"
+	        	# Resto de opciones
+				*) echo "Por favor, introduce un número valido."
 
-		            sleep 2
-
-		            echo "Volviendo al menú anterior"
-
-		            sleep 4
-		            ;;
+				   sleep 2
+				   ;;
 
 		# Cierre Nested While (Documents)
 	    	esac
 		done
 		;;
 
-	8) while [ $nestedOption -ne 3 ]; do
+	8) while true; do
 
 			clear
 		
@@ -603,10 +613,16 @@ case $mainOption in
 			echo "1) Steam"
 			echo "2) KeePass2"
 			echo "3) BitWarden"
-			echo "4) Añadir más"
+			echo "4) Exit"
 			echo "========================"
 
-			read -p "Selecciona una de las opciones: " nestedOption
+			read -p "Selecciona una opción: " nestedOption
+
+			if ! [[ $nestedOption =~ $validacion ]]; then
+				echo "Por favor, introduce un número."
+				sleep 2
+				continue
+			fi
 
 			case $nestedOption in
 
@@ -629,7 +645,7 @@ case $mainOption in
                	# KeePass2
 				2) 	echo "Ahora empezará la descarga de KeePass2"
 					
-					sudo apt install keepass2
+					sudo apt install keepass2 -y
 					sleep 2
 					echo -e "Instalación completada"
 
@@ -652,24 +668,37 @@ case $mainOption in
 					sleep 4 
 					;;
 
-				# RESTO DE OPCIONES
+				# Exit
+				4) echo "Volviendo al menú principal"
+					
+					sleep 2
+					break
+					;;
 
-				*) clear
-                    echo " $nestedOption no es una opción valida"
+				# Resto de opciones
+				*) echo "Por favor, introduce un número valido."
 
-                    sleep 2
+				   sleep 2
+				   ;;
 
-                    echo "Volviendo al menú anterior"
-
-                    sleep 4
-                    ;;
-
-		# Cierre Nested While (Dev Tools)
+		# Cierre Nested While (Others)
 			esac
 		done
 		;;
 
+	# Exit
+	9) 	echo "Saliendo del programa"
+		
+		sleep 2
+
+		break 
+		;;
+
+	*) echo "Por favor, introduce un número valido."
+
+	   sleep 2
+	   ;;
+
 # Cierre main While
-esac 
+	esac 
 done
-;;
