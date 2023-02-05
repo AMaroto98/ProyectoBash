@@ -10,7 +10,7 @@ mainOption=0
 nestedOption=0
 
 # Validación números
-validacion=^[0-9]+$
+validation=^[0-9]+$
 
 while true; do
 
@@ -31,7 +31,7 @@ while true; do
 
   	read -p "Selecciona una opción: " mainOption
 
-	if ! [[ $mainOption =~ $validacion ]]; then
+	if ! [[ $mainOption =~ $validation ]]; then
 		echo "Por favor, introduce un número."
 		sleep 2
 		continue
@@ -54,7 +54,7 @@ case $mainOption in
 
 			read -p "Selecciona una opción: " nestedOption
 
-			if ! [[ $nestedOption =~ $validacion ]]; then
+			if ! [[ $nestedOption =~ $validation ]]; then
 				echo "Por favor, introduce un número."
 				sleep 2
 				continue
@@ -167,7 +167,7 @@ case $mainOption in
 
 		    read -p "Selecciona una opción: " nestedOption
 
-			if ! [[ $nestedOption =~ $validacion ]]; then
+			if ! [[ $nestedOption =~ $validation ]]; then
 				echo "Por favor, introduce un número."
 				sleep 2
 				continue
@@ -267,7 +267,7 @@ case $mainOption in
 
 			read -p "Selecciona una opción: " nestedOption
 
-			if ! [[ $nestedOption =~ $validacion ]]; then
+			if ! [[ $nestedOption =~ $validation ]]; then
 				echo "Por favor, introduce un número."
 				sleep 2
 				continue
@@ -385,7 +385,7 @@ case $mainOption in
 
 			read -p "Selecciona una opción: " nestedOption
 
-			if ! [[ $nestedOption =~ $validacion ]]; then
+			if ! [[ $nestedOption =~ $validation ]]; then
 				echo "Por favor, introduce un número."
 				sleep 2
 				continue
@@ -441,7 +441,7 @@ case $mainOption in
 
 			read -p "Selecciona una opción: " nestedOption
 
-			if ! [[ $nestedOption =~ $validacion ]]; then
+			if ! [[ $nestedOption =~ $validation ]]; then
 				echo "Por favor, introduce un número."
 				sleep 2
 				continue
@@ -505,7 +505,7 @@ case $mainOption in
 
 			read -p "Selecciona una opción: " nestedOption
 
-			if ! [[ $nestedOption =~ $validacion ]]; then
+			if ! [[ $nestedOption =~ $validation ]]; then
 				echo "Por favor, introduce un número."
 				sleep 2
 				continue
@@ -560,7 +560,7 @@ case $mainOption in
 
 			read -p "Selecciona una opción: " nestedOption
 
-			if ! [[ $nestedOption =~ $validacion ]]; then
+			if ! [[ $nestedOption =~ $validation ]]; then
 				echo "Por favor, introduce un número."
 				sleep 2
 				continue
@@ -618,7 +618,7 @@ case $mainOption in
 
 			read -p "Selecciona una opción: " nestedOption
 
-			if ! [[ $nestedOption =~ $validacion ]]; then
+			if ! [[ $nestedOption =~ $validation ]]; then
 				echo "Por favor, introduce un número."
 				sleep 2
 				continue
@@ -627,19 +627,15 @@ case $mainOption in
 			case $nestedOption in
 
 				# Steam
-				1) 	echo "Ahora empezará la descarga de VS Code"
+				1) 	echo "Ahora empezará la descarga de Steam"
 					
-					sudo snap install --classic code 
+					sudo add-apt-repository multiverse
+					sudo apt update
+					sudo apt install steam
 					sleep 2
 					echo -e "Instalación completada"
-
-					sleep 4 
-
-					echo -e "Comprobando la versión de VS Code"
-					sleep 2
-					code --version
 					
-					sleep 4 
+					sleep 4
 					;;
 
                	# KeePass2
