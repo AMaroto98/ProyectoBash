@@ -12,27 +12,33 @@ nestedOption=0
 # Validación números
 validation=^[0-9]+$
 
+echo -e "\033[1;36mBienvenido a Option Master.\033[0m"
+echo -e "\033[1;36mTu instalador de programas de confianza.\033[0m"
+
+sleep 4
+
 while true; do
 
 	clear
 
-	echo "--------- Menu ---------"
-	echo "========================"
-	echo "1) Web Browsers"
-	echo "2) Multimedia"
-	echo "3) Developer Tools"
-	echo "4) File Sharing"
-	echo "5) Messaging"
-	echo "6) Compression"
-	echo "7) Documents"
-	echo "8) Other"
-	echo "9) Exit"
-	echo "========================"
+	echo -e "\033[1;36m--------- Menu ---------\033[0m"
+	echo -e "\033[1;36m========================\033[0m"
+	echo -e "\033[1;36m1) Web Browsers\033[0m"
+	echo -e "\033[1;36m2) Multimedia\033[0m"
+	echo -e "\033[1;36m3) Developer Tools\033[0m"
+	echo -e "\033[1;36m4) File Sharing\033[0m"
+	echo -e "\033[1;36m5) Messaging\033[0m"
+	echo -e "\033[1;36m6) Compression\033[0m"
+	echo -e "\033[1;36m7) Documents\033[0m"
+	echo -e "\033[1;36m8) Other\033[0m"
+	echo -e "\033[1;36m9) About Option Master\033[0m"
+	echo -e "\033[1;36m10) Exit\033[0m"
+	echo -e "\033[1;36m========================\033[0m"
 
-  	read -p "Selecciona una opción: " mainOption
+	read -p $'\033[1;32mSelecciona una opción:\033[0m ' mainOption
 
 	if ! [[ $mainOption =~ $validation ]]; then
-		echo "Por favor, introduce un número."
+		echo -e "\033[1;31mPor favor, introduce un número.\033[0m"
 		sleep 2
 		continue
 	fi
@@ -43,19 +49,19 @@ case $mainOption in
 
 			clear
 		
-			echo "----- Web Browsers -----"
-			echo "========================"
-			echo "1) Google Chrome"
-			echo "2) Mozilla Firefox"
-			echo "3) Chromium"
-			echo "4) Brave"
-			echo "5) Exit"
-			echo "========================"
+			echo -e "\033[1;36m----- Web Browsers -----\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
+			echo -e "\033[1;36m1) Google Chrome\033[0m"
+			echo -e "\033[1;36m2) Mozilla Firefox\033[0m"
+			echo -e "\033[1;36m3) Chromium\033[0m"
+			echo -e "\033[1;36m4) Brave\033[0m"
+			echo -e "\033[1;36m5) Exit\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
 
-			read -p "Selecciona una opción: " nestedOption
+			read -p $'\033[1;32mSelecciona una opción:\033[0m ' nestedOption
 
 			if ! [[ $nestedOption =~ $validation ]]; then
-				echo "Por favor, introduce un número."
+				echo -e "\033[1;31mPor favor, introduce un número.\033[0m"
 				sleep 2
 				continue
 			fi
@@ -63,14 +69,14 @@ case $mainOption in
 			case $nestedOption in
 
 				# Chrome
-				1) 	echo "Ahora empezará la descarga de Google Chrome"
-					echo "Se descargará wget en caso de no tenerlo"
+				1) 	echo -e "\033[1;32mAhora empezará la descarga de Google Chrome\033[0m"
+					echo -e "\033[1;32mSe descargará wget en caso de no tenerlo\033[0m"
 
 					sudo apt-get install wget -y 
 					
 					sleep 2
 
-					echo -e "Instalación de wget completada"
+					echo -e "\033[1;32mInstalación de wget completada\033[0m"
 
 					sudo apt-get update
 
@@ -80,7 +86,7 @@ case $mainOption in
 
 					sudo apt install ./google-chrome-stable_current_amd64.deb
 
-					echo -e "Google Chrome se ha instalado exitosamente"
+					echo -e "\033[1;32mGoogle Chrome se ha instalado exitosamente\033[0m"
 					
 					sleep 4 
 					;;
@@ -135,14 +141,14 @@ case $mainOption in
 					;;
 
 				# Exit
-				5) echo "Volviendo al menú principal"
+				5) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
 					
 					sleep 2
 					break
 					;;
 
 				# Resto de opciones
-				*) echo "Por favor, introduce un número valido."
+				*) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
 
 				   sleep 2
 				   ;;
@@ -156,19 +162,19 @@ case $mainOption in
 
 		    clear
 
-		    echo "----- Multimedia -----"
-		    echo "========================"
-		    echo "1) Spotify"
-		    echo "2) VLC"
-		    echo "3) Audacity"
-		    echo "4) KdenLive"
-		    echo "5) Exit"
-		    echo "========================"
+		    echo -e "\033[1;36m------ Multimedia -----\033[0m"
+		    echo -e "\033[1;36m========================\033[0m"
+		    echo -e "\033[1;36m1) Spotify\033[0m"
+		    echo -e "\033[1;36m2) VLC\033[0m"
+		    echo -e "\033[1;36m3) Audacity\033[0m"
+		    echo -e "\033[1;36m4) KdenLive\033[0m"
+		    echo -e "\033[1;36m5) Exit\033[0m"
+		    echo -e "\033[1;36m========================\033[0m"
 
-		    read -p "Selecciona una opción: " nestedOption
+			read -p $'\033[1;32mSelecciona una opción:\033[0m ' nestedOption
 
 			if ! [[ $nestedOption =~ $validation ]]; then
-				echo "Por favor, introduce un número."
+				echo -e "\033[1;31mPor favor, introduce un número.\033[0m"
 				sleep 2
 				continue
 			fi
@@ -241,7 +247,7 @@ case $mainOption in
 					;;
 
 		        # Resto de opciones
-		        *) echo "Por favor, introduce un número valido."
+		        *) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
 
 				   sleep 2
 				   ;;
@@ -255,20 +261,20 @@ case $mainOption in
 
 			clear
 		
-			echo "----- Developer Tools -----"
-			echo "========================"
-			echo "1) VSCode"
-			echo "2) Eclipse"
-			echo "3) JDK"
-			echo "4) Python"
-			echo "5) MySQL"
-			echo "6) Exit"
-			echo "========================"
+			echo -e "\033[1;36m--- Developer Tools ---\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
+			echo -e "\033[1;36m1) VSCode\033[0m"
+			echo -e "\033[1;36m2) Eclipse\033[0m"
+			echo -e "\033[1;36m3) JDK\033[0m"
+			echo -e "\033[1;36m4) Python\033[0m"
+			echo -e "\033[1;36m5) MySQL\033[0m"
+			echo -e "\033[1;36m6) Exit\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
 
 			read -p "Selecciona una opción: " nestedOption
 
 			if ! [[ $nestedOption =~ $validation ]]; then
-				echo "Por favor, introduce un número."
+				echo -e "\033[1;31mPor favor, introduce un número.\033[0m"
 				sleep 2
 				continue
 			fi
@@ -363,7 +369,7 @@ case $mainOption in
 					;;
 
 				# Resto de opciones
-				*) echo "Por favor, introduce un número valido."
+				*) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
 
 				   sleep 2
 				   ;;
@@ -377,16 +383,16 @@ case $mainOption in
 
 			clear
 		
-			echo "----- File Sharing -----"
-			echo "========================"
-			echo "1) qBittorrent"
-			echo "2) Exit"
-			echo "========================"
+			echo -e "\033[1;36m----- File Sharing -----\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
+			echo -e "\033[1;36m1) qBittorrent\033[0m"
+			echo -e "\033[1;36m2) Exit\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
 
 			read -p "Selecciona una opción: " nestedOption
 
 			if ! [[ $nestedOption =~ $validation ]]; then
-				echo "Por favor, introduce un número."
+				echo -e "\033[1;31mPor favor, introduce un número.\033[0m"
 				sleep 2
 				continue
 			fi
@@ -418,7 +424,7 @@ case $mainOption in
 					;;
 
 				# Resto de opciones
-				*) echo "Por favor, introduce un número valido."
+				*) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
 
 				   sleep 2
 				   ;;
@@ -432,17 +438,17 @@ case $mainOption in
 
 			clear
 		
-			echo "----- Messaging -----"
-			echo "========================"
-			echo "1) Slack"
-			echo "2) Telegram"
-			echo "3) Exit"
-			echo "========================"
+			echo -e "\033[1;36m------ Messaging -------\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
+			echo -e "\033[1;36m1) Slack\033[0m"
+			echo -e "\033[1;36m2) Telegram\033[0m"
+			echo -e "\033[1;36m3) Exit\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
 
 			read -p "Selecciona una opción: " nestedOption
 
 			if ! [[ $nestedOption =~ $validation ]]; then
-				echo "Por favor, introduce un número."
+				echo -e "\033[1;31mPor favor, introduce un número.\033[0m"
 				sleep 2
 				continue
 			fi
@@ -483,7 +489,7 @@ case $mainOption in
 					;;
 
 				# Resto de opciones
-				*) echo "Por favor, introduce un número valido."
+				*) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
 
 				   sleep 2
 				   ;;
@@ -497,16 +503,16 @@ case $mainOption in
 
 			clear
 		
-			echo "----- Compression -----"
-			echo "========================"
-			echo "1) 7-Zip"
-			echo "2) Exit"
-			echo "========================"
+			echo -e "\033[1;36m----- Compression ------\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
+			echo -e "\033[1;36m1) 7-Zip\033[0m"
+			echo -e "\033[1;36m2) Exit\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
 
 			read -p "Selecciona una opción: " nestedOption
 
 			if ! [[ $nestedOption =~ $validation ]]; then
-				echo "Por favor, introduce un número."
+				echo -e "\033[1;31mPor favor, introduce un número.\033[0m"
 				sleep 2
 				continue
 			fi
@@ -538,7 +544,7 @@ case $mainOption in
 					;;
 
 				# Resto de opciones
-				*) echo "Por favor, introduce un número valido."
+				*) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
 
 				   sleep 2
 				   ;;
@@ -552,16 +558,16 @@ case $mainOption in
 
 			clear
 
-			echo "----- Documents -----"
-			echo "========================"
-			echo "1) LibreOffice"
-			echo "2) Exit"
-			echo "========================"
+			echo -e "\033[1;36m------ Documents -------\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
+			echo -e "\033[1;36m1) LibreOffice\033[0m"
+			echo -e "\033[1;36m2) Exit\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
 
 			read -p "Selecciona una opción: " nestedOption
 
 			if ! [[ $nestedOption =~ $validation ]]; then
-				echo "Por favor, introduce un número."
+				echo -e "\033[1;31mPor favor, introduce un número.\033[0m"
 				sleep 2
 				continue
 			fi
@@ -594,7 +600,7 @@ case $mainOption in
 					;;
 
 	        	# Resto de opciones
-				*) echo "Por favor, introduce un número valido."
+				*) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
 
 				   sleep 2
 				   ;;
@@ -608,18 +614,18 @@ case $mainOption in
 
 			clear
 		
-			echo "----- Other -----"
-			echo "========================"
-			echo "1) Steam"
-			echo "2) KeePass2"
-			echo "3) BitWarden"
-			echo "4) Exit"
-			echo "========================"
+			echo -e "\033[1;36m--------- Other --------\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
+			echo -e "\033[1;36m1) Steam\033[0m"
+			echo -e "\033[1;36m2) KeePass2\033[0m"
+			echo -e "\033[1;36m3) BitWarden\033[0m"
+			echo -e "\033[1;36m4) Exit\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
 
 			read -p "Selecciona una opción: " nestedOption
 
 			if ! [[ $nestedOption =~ $validation ]]; then
-				echo "Por favor, introduce un número."
+				echo -e "\033[1;31mPor favor, introduce un número.\033[0m"
 				sleep 2
 				continue
 			fi
@@ -672,7 +678,7 @@ case $mainOption in
 					;;
 
 				# Resto de opciones
-				*) echo "Por favor, introduce un número valido."
+				*) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
 
 				   sleep 2
 				   ;;
@@ -682,15 +688,67 @@ case $mainOption in
 		done
 		;;
 
+	# About OM
+	9) while true; do
+
+			clear
+		
+			echo -e "\033[1;36m------- About OM -------\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
+			echo -e "\033[1;36m1) Exit\033[0m"
+			echo -e "\033[1;36m========================\033[0m"
+
+			echo -e "\033[1;36mOption Master nace de la necesidad de aprobar la asignatura de Sistemas Informáticos.\033[0m"
+			echo -e "\033[1;36mImpartida por el grandioso Marc Costa.\033[0m"
+
+			echo -e "\033[1;36mAutores de la gran proeza:\033[0m"
+			echo -e "\033[1;36m=========================\033[0m"
+			echo -e "\033[1;36mDavid\033[0m"
+			echo -e "\033[1;36mSergio\033[0m"
+			echo -e "\033[1;36mAntonio Maroto\033[0m"
+			echo -e "\033[1;36m=========================\033[0m"
+
+			echo -e "\033[1;36mNo hay mucho más que ver aquí, vuelve por donde has venido.\033[0m"
+
+			read -p "Selecciona una opción: " nestedOption
+
+			if ! [[ $nestedOption =~ $validation ]]; then
+				echo -e "\033[1;31mPor favor, introduce un número.\033[0m"
+				sleep 2
+				continue
+			fi
+
+			case $nestedOption in
+
+				# Exit
+				1) echo "Volviendo al menú principal"
+					
+					sleep 2
+					break
+					;;
+
+				# Resto de opciones
+				*) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
+
+				   sleep 2
+				   ;;
+
+		# Cierre Nested While (About OM)
+			esac
+		done
+		;;
+
 	# Exit
-	9) 	echo "Saliendo del programa"
+	10) echo "Saliendo del programa"
+
+		echo "Muchas gracias por utilizar Option Master."
 		
 		sleep 2
 
 		break 
 		;;
 
-	*) echo "Por favor, introduce un número valido."
+	*) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
 
 	   sleep 2
 	   ;;
