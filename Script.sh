@@ -23,16 +23,16 @@ while true; do
 
 	echo -e "\033[1;36m--------- Menu ---------\033[0m"
 	echo -e "\033[1;36m========================\033[0m"
-	echo -e "\033[1;36m1) Web Browsers\033[0m"
+	echo -e "\033[1;36m1) Navegadores\033[0m"
 	echo -e "\033[1;36m2) Multimedia\033[0m"
-	echo -e "\033[1;36m3) Developer Tools\033[0m"
-	echo -e "\033[1;36m4) File Sharing\033[0m"
-	echo -e "\033[1;36m5) Messaging\033[0m"
-	echo -e "\033[1;36m6) Compression\033[0m"
-	echo -e "\033[1;36m7) Documents\033[0m"
-	echo -e "\033[1;36m8) Other\033[0m"
-	echo -e "\033[1;36m9) About Option Master\033[0m"
-	echo -e "\033[1;36m10) Exit\033[0m"
+	echo -e "\033[1;36m3) Herramientas de desarrollo\033[0m"
+	echo -e "\033[1;36m4) Transmisión de datos\033[0m"
+	echo -e "\033[1;36m5) Mensajería\033[0m"
+	echo -e "\033[1;36m6) Compresión de archivos\033[0m"
+	echo -e "\033[1;36m7) Documentos\033[0m"
+	echo -e "\033[1;36m8) Otros\033[0m"
+	echo -e "\033[1;36m9) Sobre Option Master\033[0m"
+	echo -e "\033[1;36m10) Salir\033[0m"
 	echo -e "\033[1;36m========================\033[0m"
 
 	read -p $'\033[1;32mSelecciona una opción:\033[0m ' mainOption
@@ -55,7 +55,7 @@ case $mainOption in
 			echo -e "\033[1;36m2) Mozilla Firefox\033[0m"
 			echo -e "\033[1;36m3) Chromium\033[0m"
 			echo -e "\033[1;36m4) Brave\033[0m"
-			echo -e "\033[1;36m5) Exit\033[0m"
+			echo -e "\033[1;36m5) Salir\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 
 			read -p $'\033[1;32mSelecciona una opción:\033[0m ' nestedOption
@@ -86,7 +86,7 @@ case $mainOption in
 
 					sudo apt install ./google-chrome-stable_current_amd64.deb
 
-					echo -e "\033[1;32mGoogle Chrome se ha instalado exitosamente\033[0m"
+					echo -e "\033[1;32mGoogle Chrome se ha instalado Salirosamente\033[0m"
 					
 					sleep 4 
 					;;
@@ -140,7 +140,7 @@ case $mainOption in
 					sleep 4 
 					;;
 
-				# Exit
+				# Salir
 				5) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
 					
 					sleep 2
@@ -168,7 +168,7 @@ case $mainOption in
 		    echo -e "\033[1;36m2) VLC\033[0m"
 		    echo -e "\033[1;36m3) Audacity\033[0m"
 		    echo -e "\033[1;36m4) KdenLive\033[0m"
-		    echo -e "\033[1;36m5) Exit\033[0m"
+		    echo -e "\033[1;36m5) Salir\033[0m"
 		    echo -e "\033[1;36m========================\033[0m"
 
 			read -p $'\033[1;32mSelecciona una opción:\033[0m ' nestedOption
@@ -239,7 +239,7 @@ case $mainOption in
 		            sleep 4 
 		            ;;
 
-		        # Exit
+		        # Salir
 				5) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
 					
 					sleep 2
@@ -268,7 +268,7 @@ case $mainOption in
 			echo -e "\033[1;36m3) JDK\033[0m"
 			echo -e "\033[1;36m4) Python\033[0m"
 			echo -e "\033[1;36m5) MySQL\033[0m"
-			echo -e "\033[1;36m6) Exit\033[0m"
+			echo -e "\033[1;36m6) Salir\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 
 			read -p $'\033[1;32mSelecciona una opción:\033[0m ' nestedOption
@@ -361,7 +361,7 @@ case $mainOption in
 					sleep 4 
 					;;
 
-				# Exit
+				# Salir
 				6) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
 					
 					sleep 2
@@ -386,7 +386,7 @@ case $mainOption in
 			echo -e "\033[1;36m----- File Sharing -----\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) qBittorrent\033[0m"
-			echo -e "\033[1;36m2) Exit\033[0m"
+			echo -e "\033[1;36m2) Salir\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 
 			read -p $'\033[1;32mSelecciona una opción:\033[0m ' nestedOption
@@ -416,7 +416,7 @@ case $mainOption in
 					sleep 2 
 					;;
 
-				# Exit
+				# Salir
 				2) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
 					
 					sleep 2
@@ -442,7 +442,7 @@ case $mainOption in
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) Slack\033[0m"
 			echo -e "\033[1;36m2) Telegram\033[0m"
-			echo -e "\033[1;36m3) Exit\033[0m"
+			echo -e "\033[1;36m3) Salir\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 
 			read -p "Selecciona una opción: " nestedOption
@@ -481,7 +481,7 @@ case $mainOption in
 					echo -e "\033[1;32mSe ha completado la instalación de Telegram\033[0m"
 					;;
 
-				# Exit
+				# Salir
 				3) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
 					
 					sleep 2
@@ -506,7 +506,7 @@ case $mainOption in
 			echo -e "\033[1;36m----- Compression ------\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) 7-Zip\033[0m"
-			echo -e "\033[1;36m2) Exit\033[0m"
+			echo -e "\033[1;36m2) Salir\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 
 			read -p $'\033[1;32mSelecciona una opción:\033[0m ' nestedOption
@@ -536,7 +536,7 @@ case $mainOption in
 					sleep 2 
 					;;
 
-				# Exit
+				# Salir
 				2) echo "Volviendo al menú principal"
 					
 					sleep 2
@@ -561,7 +561,7 @@ case $mainOption in
 			echo -e "\033[1;36m------ Documents -------\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) LibreOffice\033[0m"
-			echo -e "\033[1;36m2) Exit\033[0m"
+			echo -e "\033[1;36m2) Salir\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 
 			read -p $'\033[1;32mSelecciona una opción:\033[0m ' nestedOption
@@ -592,7 +592,7 @@ case $mainOption in
 		            libreoffice --version
 		            ;;
 
-		        # Exit
+		        # Salir
 				2) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
 					
 					sleep 2
@@ -619,7 +619,7 @@ case $mainOption in
 			echo -e "\033[1;36m1) Steam\033[0m"
 			echo -e "\033[1;36m2) KeePass2\033[0m"
 			echo -e "\033[1;36m3) BitWarden\033[0m"
-			echo -e "\033[1;36m4) Exit\033[0m"
+			echo -e "\033[1;36m4) Salir\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 
 			read -p $'\033[1;32mSelecciona una opción:\033[0m ' nestedOption
@@ -670,7 +670,7 @@ case $mainOption in
 					sleep 4 
 					;;
 
-				# Exit
+				# Salir
 				4) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
 					
 					sleep 2
@@ -695,7 +695,7 @@ case $mainOption in
 		
 			echo -e "\033[1;36m------- About OM -------\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
-			echo -e "\033[1;36m1) Exit\033[0m"
+			echo -e "\033[1;36m1) Salir\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 
 			echo -e "\n "
@@ -724,7 +724,7 @@ case $mainOption in
 
 			case $nestedOption in
 
-				# Exit
+				# Salir
 				1) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
 					
 					sleep 2
@@ -763,7 +763,7 @@ case $mainOption in
 		done
 		;;
 
-	# Exit
+	# Salir
 	10) echo -e "\033[1;32mSaliendo del programa\033[0m"
 
 		echo -e "\033[1;32mMuchas gracias por utilizar Option Master.\033[0m"
