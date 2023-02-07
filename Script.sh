@@ -49,7 +49,7 @@ case $mainOption in
 
 			clear
 		
-			echo -e "\033[1;36m----- Web Browsers -----\033[0m"
+			echo -e "\033[1;36m----- Navegadores -----\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) Google Chrome\033[0m"
 			echo -e "\033[1;36m2) Mozilla Firefox\033[0m"
@@ -265,7 +265,7 @@ case $mainOption in
 
 			clear
 		
-			echo -e "\033[1;36m--- Developer Tools ---\033[0m"
+			echo -e "\033[1;36m--- H. de Desarrollo ---\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) VSCode\033[0m"
 			echo -e "\033[1;36m2) Eclipse\033[0m"
@@ -387,7 +387,7 @@ case $mainOption in
 
 			clear
 		
-			echo -e "\033[1;36m----- File Sharing -----\033[0m"
+			echo -e "\033[1;36m----- T. de Datos -----\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) qBittorrent\033[0m"
 			echo -e "\033[1;36m2) Salir\033[0m"
@@ -442,7 +442,7 @@ case $mainOption in
 
 			clear
 		
-			echo -e "\033[1;36m------ Messaging -------\033[0m"
+			echo -e "\033[1;36m------ Mensajería ------\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) Slack\033[0m"
 			echo -e "\033[1;36m2) Telegram\033[0m"
@@ -507,7 +507,7 @@ case $mainOption in
 
 			clear
 		
-			echo -e "\033[1;36m----- Compression ------\033[0m"
+			echo -e "\033[1;36m----- C. de Datos ------\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) 7-Zip\033[0m"
 			echo -e "\033[1;36m2) Salir\033[0m"
@@ -562,7 +562,7 @@ case $mainOption in
 
 			clear
 
-			echo -e "\033[1;36m------ Documents -------\033[0m"
+			echo -e "\033[1;36m------ Documentos ------\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) LibreOffice\033[0m"
 			echo -e "\033[1;36m2) Salir\033[0m"
@@ -618,7 +618,7 @@ case $mainOption in
 
 			clear
 		
-			echo -e "\033[1;36m--------- Other --------\033[0m"
+			echo -e "\033[1;36m--------- Otros --------\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
 			echo -e "\033[1;36m1) Steam\033[0m"
 			echo -e "\033[1;36m2) KeePass2\033[0m"
@@ -697,25 +697,18 @@ case $mainOption in
 
 			clear
 		
-			echo -e "\033[1;36m------- About OM -------\033[0m"
+			echo -e "\033[1;36m------- Sobre OM -------\033[0m"
 			echo -e "\033[1;36m========================\033[0m"
-			echo -e "\033[1;36m1) Salir\033[0m"
-			echo -e "\033[1;36m========================\033[0m"
+			echo -e "\033[1;36m1) David Ramírez\033[0m"
+			echo -e "\033[1;36m2) Sergi Majada\033[0m"
+			echo -e "\033[1;36m3) Antonio Maroto\033[0m"
+			echo -e "\033[1;36m4) Salir\033[0m"
+			echo -e "\033[1;36m=========================\033[0m"
 
 			echo -e "\n "
 
-			echo -e "\033[1;36mOption Master nace de la necesidad de aprobar la asignatura de Sistemas Informáticos.\033[0m"
-			echo -e "\033[1;36mImpartida por el grandioso Marc Costa.\033[0m"
-
-			echo -e "\n "
-
-			echo -e "\033[1;36mAutores de la gran proeza:\033[0m"
-			echo -e "\033[1;36m=========================\033[0m"
-			echo -e "\033[1;36m2)David Ramírez\033[0m"
-			echo -e "\033[1;36m3)Sergi Majada\033[0m"
-			echo -e "\033[1;36m4)Antonio Maroto\033[0m"
-			echo -e "\033[1;36m=========================\033[0m"
-
+			echo -e "\033[1;36mOption Master nace de la necesidad de aprobar la asignatura de Sistemas Informáticos, impartida por el grandioso Marc Costa.\033[0m"
+		
 			echo -e "\033[1;36mNo hay mucho más que ver aquí, vuelve por donde has venido.\033[0m"
 
 			read -p $'\033[1;32mSelecciona una opción:\033[0m ' nestedOption
@@ -728,33 +721,33 @@ case $mainOption in
 
 			case $nestedOption in
 
-				# Salir
-				1) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
-					
-					sleep 2
-					break
-					;;
-
-				2) echo -e "\033[1;32mAbriendo el perfil de GitHub de David Ramírez\033[0m"
+				1) echo -e "\033[1;32mAbriendo el perfil de GitHub de David Ramírez\033[0m"
             
 		           sleep 2
 		           xdg-open "https://github.com/davidzz-code";
 		           sleep 2
 		           ;;
 
-		        3) echo -e "\033[1;32mAbriendo el perfil de GitHub de Sergi Majada\033[0m"
+		        2) echo -e "\033[1;32mAbriendo el perfil de GitHub de Sergi Majada\033[0m"
             
 		           sleep 2
 		           xdg-open "https://github.com/smajada";		          
 		           sleep 2
 		           ;;
 
-				4) echo -e "\033[1;32mAbriendo el perfil de GitHub de Antonio Maroto\033[0m"
+				3) echo -e "\033[1;32mAbriendo el perfil de GitHub de Antonio Maroto\033[0m"
             
 		           sleep 2
 		           xdg-open "https://github.com/AMaroto98";		          
 		           sleep 2
 		           ;;
+
+		        # Salir
+				4) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
+					
+					sleep 2
+					break
+					;;
 
 				# Resto de opciones
 				*) echo -e "\033[1;31mPor favor, introduce un número valido.\033[0m"
@@ -773,6 +766,8 @@ case $mainOption in
 		echo -e "\033[1;32mMuchas gracias por utilizar Option Master.\033[0m"
 		
 		sleep 2
+
+		clear
 
 		break 
 		;;
