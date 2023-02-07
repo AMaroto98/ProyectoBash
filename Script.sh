@@ -187,6 +187,10 @@ case $mainOption in
 		            sudo snap install spotify
 		            sleep 2
 		            echo -e "\033[1;32mInstalación completada\033[0m"
+
+					echo -e "\033[1;32mComprobando la versión de VLC\033[0m"
+		            sleep 2
+		            spotify -version
 		            
 		            sleep 4 
 		            ;;
@@ -520,16 +524,16 @@ case $mainOption in
 			case $nestedOption in
 
 				# 7-Zip
-				1) 	echo "Ahora empezará la descarga de 7-Zip"
+				1) 	echo -e "\033[1;32mAhora empezará la descarga de 7-Zip\033[0m"
 					
 					sudo apt update
 					sudo apt install p7zip-full -y
 					
 					sleep 2
 
-					echo -e "Se ha completado la instalación de 7-Zip"
+					echo -e "\033[1;32mSe ha completado la instalación de 7-Zip\033[0m"
 
-					echo -e "Comprobando la versión de 7-Zip"
+					echo -e "\033[1;32mComprobando la versión de 7-Zip\033[0m"
 
 					 --version
 					
@@ -537,7 +541,7 @@ case $mainOption in
 					;;
 
 				# Salir
-				2) echo "Volviendo al menú principal"
+				2) echo -e "\033[1;32mVolviendo al menú principal\033[0m"
 					
 					sleep 2
 					break
